@@ -33,8 +33,11 @@ p1 <- p1 + labs(title = "New Zealand")
 p1
 
 
-p1+geom_point(data = samps, aes(x = Longitude, y = Latitude,shape = Sampling_site, colour = Sampling_site), size = 7,inherit.aes = FALSE)
+p2=p1+geom_point(data = samps, aes(x = Longitude, y = Latitude,shape = Sampling_site, colour = Sampling_site), size = 7,inherit.aes = FALSE)+theme_bw()
 
+p2
+
+p2+ geom_text(data = samps, aes(x = Longitude, y = Latitude, label = Sampling_site), hjust = -0.2, colour = "black", size = 3,inherit.aes = FALSE)
 
 library(ggmap)
 library(mapproj)
